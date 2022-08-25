@@ -10,10 +10,10 @@ class MyStreamListener(Stream):
             return False
 
 
-consumer_key = "FGqkOJU3o3Rh15alV5Ql4obUX"
-consumer_secret = "2vIiKctsxxezL6kKGo4qtyFPDcY1viFz6M1a2bHLTwWrijVXE5"
-access_token = "151179935-HLh8FmhbS0D3892npnkfiM6UNc1hLZ0NRHKhZCzJ"
-access_token_secret = "tiKTQPpveXHZRsEm0ODUeCJGmlSBqqeUzO7F7cRYKrTp6"
+consumer_key = "hahbSWwAK62nqgdmuESNAvNhA"
+consumer_secret = "R3YvB715WGlxOx5zVOQRpC7bwO38w0H6PYyjkYy3T9ZNKNEtcn"
+access_token = "1488374561951391746-IpjthOzIQsIDovQluWk2SBzpR6RWqF"
+access_token_secret = "FVyrKXiXYLAeBwTDCtYQvQlmJoXeKTDHIwWh3F08DQi88"
 
 stream = MyStreamListener(consumer_key,
                           consumer_secret,
