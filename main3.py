@@ -23,7 +23,7 @@ if (not api):
     sys.exit(-1)
 else:
     print ("Scraping data now") # Enter lat and long and radius in Kms  q='hello'
-    cursor = tweepy.Cursor(api.search_tweets, q="truffles", result_type="new", geocode="55.0000,4.0000,1000km",lang='en',count=100)
+    cursor = tweepy.Cursor(api.search_tweets, q="mexico", result_type="new", geocode="15.783471,-90.230759,1000km",lang='es',count=100)
     results=[]
     for item in cursor.items(1000): # Remove the limit to 1000
             results.append(item)
