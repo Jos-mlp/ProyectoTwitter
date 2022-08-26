@@ -9,10 +9,10 @@ import sys
 import time
 
 
-ckey = 'hahbSWwAK62nqgdmuESNAvNhA'
-csecret = 'R3YvB715WGlxOx5zVOQRpC7bwO38w0H6PYyjkYy3T9ZNKNEtcn'
-atoken = '1488374561951391746-IpjthOzIQsIDovQluWk2SBzpR6RWqF'
-asecret = 'FVyrKXiXYLAeBwTDCtYQvQlmJoXeKTDHIwWh3F08DQi88'
+ckey = "hahbSWwAK62nqgdmuESNAvNhA"
+csecret = "R3YvB715WGlxOx5zVOQRpC7bwO38w0H6PYyjkYy3T9ZNKNEtcn"
+atoken = "1488374561951391746-IpjthOzIQsIDovQluWk2SBzpR6RWqF"
+asecret = "FVyrKXiXYLAeBwTDCtYQvQlmJoXeKTDHIwWh3F08DQi88"
 
 OAUTH_KEYS = {'consumer_key':ckey, 'consumer_secret':csecret, 'access_token_key':atoken, 'access_token_secret':asecret}
 auth = tweepy.OAuthHandler(OAUTH_KEYS['consumer_key'], OAUTH_KEYS['consumer_secret'])
