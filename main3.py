@@ -1,4 +1,5 @@
 import tweepy
+import credentials
 from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy.streaming import Stream
@@ -8,15 +9,8 @@ import csv
 import sys
 import time
 
-j=0
-
-ckey = "hahbSWwAK62nqgdmuESNAvNhA"
-csecret = "R3YvB715WGlxOx5zVOQRpC7bwO38w0H6PYyjkYy3T9ZNKNEtcn"
-atoken = "1488374561951391746-IpjthOzIQsIDovQluWk2SBzpR6RWqF"
-asecret = "FVyrKXiXYLAeBwTDCtYQvQlmJoXeKTDHIwWh3F08DQi88"
-
-OAUTH_KEYS = {'consumer_key':ckey, 'consumer_secret':csecret, 'access_token_key':atoken, 'access_token_secret':asecret}
-auth = tweepy.OAuthHandler(OAUTH_KEYS['consumer_key'], OAUTH_KEYS['consumer_secret'])
+OAUTH_KEYS = {credentials.API_KEY, credentials.API_SECRET_KEY, credentials.ACCESS_TOKEN, credentials.ACCESS_TOKEN_SECRET}
+auth = tweepy.OAuthHandler(credentials.API_KEY, credentials.API_SECRET_KEY)
 
 api = tweepy.API(auth)
 if (not api):
@@ -24,9 +18,9 @@ if (not api):
     sys.exit(-1)
 else:
     print ("Scraping data now") # Enter lat and long and radius in Kms  q='hello'
-    cursor = tweepy.Cursor(api.search_tweets, q="Guatemala", result_type="new", geocode="15.783471,-90.230759,1000km",lang='es',count=100)
+    cursor = tweepy.Cursor(api.search_tweets, q="Guatemala", result_type="new", geocode="15.783471,-90.230759,1000km",lang='es',count=400)
     results=[]
-    for item in cursor.items(1000): # Remove the limit to 1000
+    for item in cursor.items(): # Remove the limit to 1000
         print(item.id)
         print(item.text.encode('utf-8'))
         print(item.user.id)
