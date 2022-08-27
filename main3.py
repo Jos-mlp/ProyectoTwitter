@@ -8,6 +8,7 @@ import csv
 import sys
 import time
 
+j=0
 
 ckey = "hahbSWwAK62nqgdmuESNAvNhA"
 csecret = "R3YvB715WGlxOx5zVOQRpC7bwO38w0H6PYyjkYy3T9ZNKNEtcn"
@@ -23,10 +24,16 @@ if (not api):
     sys.exit(-1)
 else:
     print ("Scraping data now") # Enter lat and long and radius in Kms  q='hello'
-    cursor = tweepy.Cursor(api.search_tweets, q="mexico", result_type="new", geocode="15.783471,-90.230759,1000km",lang='es',count=100)
+    cursor = tweepy.Cursor(api.search_tweets, q="Guatemala", result_type="new", geocode="15.783471,-90.230759,1000km",lang='es',count=100)
     results=[]
     for item in cursor.items(1000): # Remove the limit to 1000
-            results.append(item)
+        print(item.id)
+        print(item.text.encode('utf-8'))
+        print(item.user.id)
+        print(item.user.name)
+        print(item.user.description)
+
+        results.append(item)
 
 def toDataFrame(tweets):
     # COnvert to data frame
@@ -63,4 +70,4 @@ def toDataFrame(tweets):
     return DataSet
 
 DataSet = toDataFrame(results)
-DataSet.to_csv('Belgium_27.csv',index=False)
+DataSet.to_csv('BigData.csv',index=False)
