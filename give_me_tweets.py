@@ -26,7 +26,7 @@ while count <= 3000:
             continue
         f = open('./prueba.txt', 'a', encoding='utf-8')
         #f.write(tweet.full_text + '\n')
-        f.write(str(tweet.id)  + '\n' + tweet.full_text + '\n' + '*'*50 + '\n') # usa esto si quieres tener separados los tweets
+        f.write("Tweet_id:  " + str(tweet.id)  + '\n' + "Texto tweet:  " + tweet.full_text + '\n' + '*'*50 + '\n') # usa esto si quieres tener separados los tweets
         f.close
         count += 1
         id = tweet.id
