@@ -18,8 +18,8 @@ api = tweepy.API(auth)
 # Obtener los tweets de un topic
 id = None
 count = 0
-while count <= 3000:
-    tweets = api.search_tweets(q='#gt', lang='es', tweet_mode='extended', max_id=id)
+while True:
+    tweets = api.search_tweets(q='gt', tweet_mode='extended', max_id=id)
     for tweet in tweets:
         if tweet.full_text.startswith('RT'):
             count += 1
