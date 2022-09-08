@@ -25,8 +25,23 @@ while count <= 3000:
             count += 1
             continue
         f = open('./prueba.txt', 'a', encoding='utf-8')
-        #f.write(tweet.full_text + '\n')
-        f.write("Tweet_id:  " + str(tweet.id)  + '\n' + "Texto tweet:  " + tweet.full_text + '\n' + '*'*50 + '\n') # usa esto si quieres tener separados los tweets
+        
+        tweet_id = tweet.id #Id tweet int
+        tweet_texto = tweet.full_text #texto tweet
+        tweet_Source = tweet.source #Desde donde tweetean
+        tweet_Created = tweet.created_at #Fecha de creacion del usuario
+        user_id = tweet.user.id #ID usuario
+        user_name = tweet.user.name #Nombre del usuario
+        user_Create_Dt = tweet.user.created_at #Fecha de creacion del usuario
+        userDesc = tweet.user.description #Descripcion del usuario
+        userFollowerCt = tweet.user.followers_count #Personas a las que sigue la cuenta
+        userFriendsCt = tweet.user.friends_count #Personas que siguen a la cuenta
+        userLocation = tweet.user.location #Ubicacion del usuario
+
+        f.write("Tweet_id: " + str(tweet_id)  + '\n' + "Texto tweet: " +  tweet_texto + '\n'+ "tweet_Source :  " + str(tweet_Source) + '\n'
+        + "tweet_Created: " + str(tweet_Created) + '\n' + "user_id: " + str(user_id) + '\n' + "User_Name: " + str(user_name) + '\n'
+        + "user_Create_Dt: " + str(user_Create_Dt) + '\n' + "userDesc: " + str(userDesc) + '\n' + "userFollowerCt: " + str(userFollowerCt) + '\n'
+        + "userFriendsCt: " + str(userFriendsCt) + '\n' + "userLocation: " + str(userLocation) + '\n' + "userTimezone: " '\n'+ '*'*50 + '\n') # usa esto si quieres tener separados los tweets
         f.close
         count += 1
         id = tweet.id

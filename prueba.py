@@ -10,7 +10,7 @@ import sys
 import time
 
 OAUTH_KEYS = {credentials.API_KEY, credentials.API_SECRET_KEY, credentials.ACCESS_TOKEN, credentials.ACCESS_TOKEN_SECRET}
-auth = tweepy.OAuthHandler("asdasd121", credentials.API_SECRET_KEY)
+auth = tweepy.OAuthHandler(credentials.API_KEY, credentials.API_SECRET_KEY)
 
 api = tweepy.API(auth)
 if (not api):
@@ -18,14 +18,16 @@ if (not api):
     sys.exit(-1)
 else:
     print ("Scraping data now") # Enter lat and long and radius in Kms  q='hello'
-    cursor = tweepy.Cursor(api.search_tweets, q="Guatemala", result_type="new", geocode="15.783471,-90.230759,1000km",lang='es',count=400)
+    cursor = tweepy.Cursor(api.search_tweets, q="empanada", result_type="new", geocode="15.783471,-90.230759,1000km",lang='es',count=400)
     results=[]
     for item in cursor.items(): # Remove the limit to 1000
-        print(item.id)
-        print(item.text.encode('utf-8'))
-        print(item.user.id)
-        print(item.user.name)
-        print(item.user.description)
+        print("Tweet_id:  " + str(item.id)  + '\n' + "Texto tweet:  " + str(item.text.encode('utf-8')) + '\n'  + "User_id:  " + str(item.user.id)  + '\n' 
+        + "UserName_id:  " + str(item.user.name)  + '\n'+ '*'*50 + '\n')
+        #print(item.id)
+        #print(item.text.encode('utf-8'))
+        #print(item.user.id)
+        #print(item.user.name)
+        #print(item.user.description)
 
         results.append(item)
 
