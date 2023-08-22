@@ -63,7 +63,14 @@ def mostrarDatos():
         #Obtiene las fuentes mas comunes
         fuentes_top = obtener_mas_comunes_fuentes(coleccion, num_sources=3)
         # Insertar valores en los campos de entrada para fuentes
+        source1.delete(0, END)
+        source1.insert(0, f"{fuentes_top[0][0]} - {fuentes_top[0][1]}")
 
+        source2.delete(0, END)
+        source2.insert(0, f"{fuentes_top[1][0]} - {fuentes_top[1][1]}")
+
+        source3.delete(0, END)
+        source3.insert(0, f"{fuentes_top[2][0]} - {fuentes_top[2][1]}")
 
 
     except pymongo.errors.ServerSelectionTimeoutError as errorTiempo:
@@ -91,29 +98,49 @@ tabla.heading("#0", text="TWEET ID")
 tabla.heading("Text", text="TEXTO")
 tabla.heading("created", text="FECHA CREACION")
 tabla.heading("userName", text="NOMBRE USUARIO")
-tabla.heading("userLocation", text="UBICACION USER")
+tabla.heading("userLocation", text="UBICACION USUARIO")
 
+#Boton Ubicacion
+actualizar=Button(ventana,text="Ubicaciones mas comunes",command="",bg="green",fg="white")
+actualizar.grid(row=2,columnspan=2,sticky=W+E)
 
 #Etiqueta 1
-Label(ventana,text="Pais 1:").grid(row=2,column=0,sticky=W+E)
+Label(ventana,text="Ubicacion 1:").grid(row=3,column=0,sticky=W+E)
 pais1=Entry(ventana)
-pais1.grid(row=2,column=1,sticky=W+E)
+pais1.grid(row=3,column=1,sticky=W+E)
 
 #Etiqueta 2
-Label(ventana,text="Pais 2:").grid(row=3,column=0,sticky=W+E)
+Label(ventana,text="Ubicacion 2:").grid(row=4,column=0,sticky=W+E)
 pais2=Entry(ventana)
-pais2.grid(row=3,column=1,sticky=W+E)
+pais2.grid(row=4,column=1,sticky=W+E)
 
 #Etiqueta 3
-Label(ventana,text="Pais 3:").grid(row=4,column=0,sticky=W+E)
+Label(ventana,text="Ubicacion 3:").grid(row=5,column=0,sticky=W+E)
 pais3 =Entry(ventana)
-pais3.grid(row=4,column=1,sticky=W+E)
+pais3.grid(row=5,column=1,sticky=W+E)
 
+#Boton Sources
+actualizar=Button(ventana,text="Fuentes mas comunes",command="",bg="green",fg="white")
+actualizar.grid(row=6,columnspan=2,sticky=W+E)
 
+#Etiqueta 4
+Label(ventana,text="Fuente 1:").grid(row=7,column=0,sticky=W+E)
+source1=Entry(ventana)
+source1.grid(row=7,column=1,sticky=W+E)
+
+#Etiqueta 5
+Label(ventana,text="Fuente 2:").grid(row=8,column=0,sticky=W+E)
+source2=Entry(ventana)
+source2.grid(row=8,column=1,sticky=W+E)
+
+#Etiqueta 6
+Label(ventana,text="Fuente 3:").grid(row=9,column=0,sticky=W+E)
+source3 =Entry(ventana)
+source3.grid(row=9,column=1,sticky=W+E)
 
 #Boton Actualizar
-actualizar=Button(ventana,text="Actualizar",command=mostrarDatos,bg="green",fg="white")
-actualizar.grid(row=5,columnspan=2,sticky=W+E)
+actualizar=Button(ventana,text="Actualizar",command=mostrarDatos,bg="blue",fg="white")
+actualizar.grid(row=10,columnspan=2,sticky=W+E)
 
 mostrarDatos()
 ventana.mainloop()
