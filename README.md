@@ -24,6 +24,8 @@ Este archivo proporciona una función `ObtenerConexion()` que establece una cone
 Este script crea una interfaz gráfica de usuario (GUI) utilizando la biblioteca Tkinter. Muestra los datos de los tweets almacenados en la base de datos MongoDB en una tabla, y también presenta información sobre las ubicaciones y fuentes más comunes en los datos. El script llama a las funciones definidas en los otros archivos para obtener y mostrar los datos en la GUI.
 ![Captura de pantalla 1](/img/c1.png)
 
+ > Nota: Debes tener instalada la libreria TKinter
+        
 ## Uso
 
 #### 1. Clona este repositorio en tu máquina local:
