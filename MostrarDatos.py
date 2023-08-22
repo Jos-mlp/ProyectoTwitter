@@ -80,7 +80,6 @@ def mostrarDatos():
         print("Fallo al conectarse a mongodb "+errorConexion)
     
 
-
 #Interaz TK
 ventana=Tk()
 tabla = ttk.Treeview(ventana, columns=("Text", "created", "userName", "userLocation"))
